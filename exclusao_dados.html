@@ -1,0 +1,47 @@
+<!-- meu_app/templates/exclusao_dados.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitação de Exclusão de Dados</title>
+</head>
+<body>
+    <h1>Solicitação de Exclusão de Dados</h1>
+    <p>Para solicitar a exclusão de seus dados pessoais, por favor, siga as instruções abaixo:</p>
+
+    <h2>Como Solicitar a Exclusão de Dados</h2>
+    <p>Você pode solicitar a exclusão de seus dados pessoais de nossa plataforma de duas maneiras:</p>
+    <ul>
+        <li><strong>Por e-mail:</strong> Envie um e-mail para <a href="basilixsolucoes@gmail.com">basilixsolucoes@gmail.com</a> com o assunto "Solicitação de Exclusão de Dados" e inclua seu nome completo e e-mail registrado.</li>
+        <li><strong>Por Formulário Online:</strong> Preencha o formulário abaixo para solicitar a exclusão. Nós verificaremos sua identidade e, em seguida, processaremos sua solicitação.</li>
+    </ul>
+
+    <h2>Verificação de Identidade</h2>
+    <p>Para proteger sua privacidade, podemos precisar verificar sua identidade antes de processar a solicitação de exclusão. Isso pode envolver o envio de um documento de identidade ou outro meio de autenticação.</p>
+
+    <h2>Tempo de Processamento</h2>
+    <p>A solicitação de exclusão de dados será processada dentro de 30 dias úteis. Se houver algum atraso ou complicação, informaremos o motivo e o tempo estimado para a conclusão.</p>
+
+    <h2>Limitações na Exclusão de Dados</h2>
+    <p>Por motivos legais, alguns dados podem ser retidos por um período mais longo. Isso inclui, mas não se limita a, dados relacionados a transações financeiras, segurança e obrigações fiscais. Nesse caso, entraremos em contato para explicar quais dados não podem ser excluídos imediatamente.</p>
+
+    <h2>Formulário de Solicitação</h2>
+    <form action="/solicitar-exclusao/" method="POST">
+        <!-- Inclua um campo para o nome do usuário -->
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <!-- Inclua um campo para o e-mail do usuário -->
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <!-- Campo para escolher o motivo -->
+        <label for="motivo">Motivo da Exclusão:</label>
+        <textarea id="motivo" name="motivo" required></textarea><br><br>
+
+        <!-- Botão de envio -->
+        <button type="submit">Solicitar Exclusão</button>
+    </form>
+</body>
+</html>
