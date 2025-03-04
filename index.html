@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Crescimento</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <h1>Dashboard de Engajamento</h1>
+    <button onclick="analisar()">Analisar Perfil</button>
+    <p id="resultado"></p>
+    
+    <div id="grafico"></div>
+
+    <script>
+        function analisar() {
+            fetch('http://127.0.0.1:5000/stats?username=meu_perfil')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('resultado').innerText = JSON.stringify(data);
+                    plotGrafico(data.recommended_users);
+                });
+        }
+
+        function plotGrafico(recommendedUsers) {
+            var trace = {
+                x: recommendedUsers,
+                y: [1, 2, 3], // Exemplo de engajamento (isso deve ser dinâmico)
+                type: 'bar'
+            };
+
+            var layout = {
+                title: 'Engajamento dos Usuários Recomendados',
+                xaxis: { title: 'Usuários' },
+                yaxis: { title: 'Engajamento' }
+            };
+
+            var data = [trace];
+            Plotly.newPlot('grafico', data, layout);
+        }
+    </script>
+</body>
+</html>
